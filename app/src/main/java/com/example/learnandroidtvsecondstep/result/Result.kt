@@ -39,8 +39,8 @@ fun <L, R, L1> Result<L, R>.mapError(f: (L) -> L1): Result<L1, R> = when (this) 
 //    error.error()
 //}
 
-inline fun <L, R> attempt(errorMapper: (Throwable) -> L, f: () -> R): Result<L, R> = try {
-    f().success()
+inline fun <L, R> attempt(errorMapper: (Throwable) -> L, okResultAction: () -> R): Result<L, R> = try {
+    okResultAction().success()
 //    Result.Success(f())
 } catch (error: Throwable) {
     errorMapper(error).error()
