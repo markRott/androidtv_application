@@ -25,7 +25,7 @@ Link to youtube: https://youtu.be/qbBc9v4oNS4
 
 **MoviesRepositoryImpl class:**
 
-```
+
 class MoviesRepositoryImpl(private val api: AppApi) : MoviesRepository {
 
     override suspend fun fetchPopularMovies(page: Int): Result<GenericError, MoviesData> {
@@ -58,7 +58,7 @@ class MoviesRepositoryImpl(private val api: AppApi) : MoviesRepository {
         }
     }
 }
-```
+
 
 
 **Images from application:**
