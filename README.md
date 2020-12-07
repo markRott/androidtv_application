@@ -19,7 +19,7 @@ Link to youtube: https://youtu.be/qbBc9v4oNS4
 **To `RUN` a project, you need to get the developer's keys from TMDb servise: https://www.themoviedb.org/login?language=en**
 
 
-![Add secret key to project](/app/src/main/assets/1.jpg)
+![Add secret key to project](/app/src/main/assets/4.jpg)
 
 ---
 
