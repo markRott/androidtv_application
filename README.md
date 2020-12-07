@@ -6,13 +6,14 @@ Link to youtube: https://youtu.be/qbBc9v4oNS4
 
 **To develop this application, I used the following technologies:**
 
-Coroutines
-ViewModel
-LiveData
-Dagger Hilt
-Glide
-Retrofit
-Gson
+- Coroutines
+- ViewModel
+- LiveData
+- Dagger Hilt
+- Glide
+- Retrofit
+- Gson
+
 
 ---
 
