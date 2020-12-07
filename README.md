@@ -64,7 +64,7 @@ class MoviesRepositoryImpl(private val api: AppApi) : MoviesRepository {
 
 **MainViewModel class:**
 
-    ```
+```
 private fun fetchPopularMovie(page: Int) {
         fetch(POPULAR) { repository.fetchPopularMovies(page) }
     }
@@ -96,8 +96,7 @@ private fun fetchPopularMovie(page: Int) {
     }
 ```
 
-
-
+---
 
 **Images from application:**
 
