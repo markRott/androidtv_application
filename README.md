@@ -25,7 +25,7 @@ Link to youtube: https://youtu.be/qbBc9v4oNS4
 
 **MoviesRepositoryImpl class:**
 
-
+```
 class MoviesRepositoryImpl(private val api: AppApi) : MoviesRepository {
 
     override suspend fun fetchPopularMovies(page: Int): Result<GenericError, MoviesData> {
@@ -58,6 +58,44 @@ class MoviesRepositoryImpl(private val api: AppApi) : MoviesRepository {
         }
     }
 }
+```
+
+---
+
+**MainViewModel class:**
+
+    ```
+private fun fetchPopularMovie(page: Int) {
+        fetch(POPULAR) { repository.fetchPopularMovies(page) }
+    }
+
+    private fun fetchNowPlayingMovies(page: Int) {
+        fetch(NOW_PLAYING) { repository.fetchNowPlayingMovies(page) }
+    }
+
+    private fun fetchTopRatedMovies(page: Int) {
+        fetch(TOP_RATED) { repository.fetchTopRatedMovies(page) }
+    }
+
+    private fun fetchUpcomingMovies(page: Int) {
+        fetch(UPCOMING) { repository.fetchUpcomingMoviesMovies(page) }
+    }
+
+    private fun fetch(id: Int, action: suspend () -> Result<GenericError, MoviesData>) {
+        viewModelScope.launch {
+            action.invoke().fold(
+                    ifSuccess = { setupData(id, it) },
+                    ifError = {
+                        /**
+                         * At this point, you can notify your view of the error that has occurred.
+                         */
+                        logDebug(APP_TAG) { "MainViewModel error: $it" }
+                    }
+            )
+        }
+    }
+```
+
 
 
 
